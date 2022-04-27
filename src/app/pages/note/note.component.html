@@ -1,0 +1,14 @@
+<form [formGroup]="noteForm" class="form-wrapper">
+    <h2 class="titulo">{{titulo}}</h2>
+    <input class="hide" type="text" formControlName="Fecha"/>
+    <label for="titulo">Titulo: </label>
+    <input id="titulo" type="text" formControlName="Titulo" oninput="this.value = this.value.toUpperCase()"/>
+    <span *ngIf="this.noteForm.get('Titulo')?.errors && this.noteForm.get('Titulo')?.touched"class="danger">El titulo no permite correos</span>
+    <label for="contenido">Contenido: </label>
+    <textarea id="contenido" type="text" formControlName="Contenido" maxlength="150"></textarea>
+    <span *ngIf="this.noteForm.get('Contenido')?.errors && this.noteForm.get('Contenido')?.touched"class="danger">El minimo de caracteres es 25</span>
+    <div class="btn-wrapper"> 
+        <a (click)="onSubmit()" class="in"> {{ titulo }}</a>
+        <a routerLink="/dashboard" class="another-btn">Cancelar</a>
+    </div>
+</form>

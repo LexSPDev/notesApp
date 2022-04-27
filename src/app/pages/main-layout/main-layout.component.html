@@ -1,0 +1,12 @@
+<div class="top-nav">
+    <div class="" *ngIf="authService.userData as user">
+        <p><strong>{{user.email}}</strong></p>
+      </div>
+      <div class="btn-wrapper-notes">
+          <a routerLink="/new-note" class="go"> <i class="fa-solid fa-plus"></i></a>
+          <a (click)="logout()" class="danger"> <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+      </div>
+</div>
+<div class="main-layout-wrapper">
+    <app-notes class="notes-wrapper" [user]="user"></app-notes>
+</div>

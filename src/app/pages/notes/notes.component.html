@@ -1,0 +1,12 @@
+<div *ngIf="!vacio">
+    <h2 class="titulo">Aun no tienes notas guardadas</h2>
+</div>
+<div class="note-card" *ngFor="let note of notes">
+    <span>{{note.Fecha}}</span>
+    <h3>{{note.Titulo}}</h3>
+    <span class="contenido-wrapper">{{note.Contenido}}</span>
+    <div class="btn-wrapper-notes">
+        <a class="go" [routerLink]="['/edit-note/', note.id]"><i class="fa-solid fa-pen"></i></a>
+        <a class="danger" (click)="eliminarNota(note.id)"><i class="fa-thin fa-x"></i></a>
+    </div>
+</div>

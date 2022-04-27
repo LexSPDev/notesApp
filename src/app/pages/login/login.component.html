@@ -1,0 +1,10 @@
+<form [formGroup]="loginForm" class="form-wrapper">
+    <label for="user">Correo electrónico:: </label>
+    <input id="user" type="email" formControlName="User"/>
+    <label for="password">Contraseña: </label>
+    <input id="password" type="password" formControlName="Password" />
+    <div class="btn-wrapper">
+        <a (click)="onSubmit()" class="in">Iniciar sesión</a>
+        <a routerLink="/register" class="another-btn">Registrarse</a>
+    </div>
+</form>

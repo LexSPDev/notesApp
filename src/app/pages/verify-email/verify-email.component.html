@@ -1,0 +1,20 @@
+    <div class="form-wrapper">
+      <div >
+        <h3 class="titulo">Gracias por registrarte</h3>
+        <div  *ngIf="authService.userData as user">
+          <p>Se envio un correo de verificación a: <strong>{{user.email}}</strong>.</p>
+          <p>Revisa tu correo y confirma para ingresar</p>
+        </div>
+        
+        <!-- Calling SendVerificationMail() method using authService Api -->
+        <div>
+          <button (click)="authService.SendVerificationMail()">
+            <i class="fas fa-redo-alt"></i>
+            Reenviar correo de verificación
+          </button>
+        </div>
+      </div>
+      <div class="btn-wrapper">
+        <a class="in" routerLink="/login"> Ve a iniciar sesión</a>
+      </div>
+    </div>
